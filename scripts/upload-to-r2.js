@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import fs from "fs/promises";
 
 dotenv.config();
-console.log(process.env.ENDPOINT);
+
 // AWS S3 configuration
 const s3Client = new S3Client({
   region: "auto",

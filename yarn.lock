@@ -1784,7 +1784,6 @@ __metadata:
     apache-arrow: ^12.0.1
     arquero: ^5.2.0
     comlink: ^4.4.1
-    csv-parser: ^3.0.0
     dotenv: ^16.3.1
     duckdb: ^0.8.1
     parquet-wasm: ^0.4.0
@@ -1792,7 +1791,6 @@ __metadata:
     vite: ^4.4.5
     vite-plugin-top-level-await: ^1.3.1
     vite-plugin-wasm: ^3.2.2
-    vite-plugin-wasm-esm: ^1.0.0
   languageName: unknown
   linkType: soft
 
@@ -1935,17 +1933,6 @@ __metadata:
     shebang-command: ^2.0.0
     which: ^2.0.1
   checksum: 671cc7c7288c3a8406f3c69a3ae2fc85555c04169e9d611def9a675635472614f1c0ed0ef80955d5b6d4e724f6ced67f0ad1bb006c2ea643488fcfef994d7f52
-  languageName: node
-  linkType: hard
-
-"csv-parser@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "csv-parser@npm:3.0.0"
-  dependencies:
-    minimist: ^1.2.0
-  bin:
-    csv-parser: bin/csv-parser
-  checksum: adc9d67d9f185249825570778c24d13004625301655330f6b735a052b9fdfbe1a239a014afb1f89939e0626ee573718f71f9f14164db7c17e4bcb2f38d6a162b
   languageName: node
   linkType: hard
 
@@ -2508,13 +2495,6 @@ __metadata:
   dependencies:
     brace-expansion: ^2.0.1
   checksum: 253487976bf485b612f16bf57463520a14f512662e592e95c571afdab1442a6a6864b6c88f248ce6fc4ff0b6de04ac7aa6c8bb51e868e99d1d65eb0658a708b5
-  languageName: node
-  linkType: hard
-
-"minimist@npm:^1.2.0":
-  version: 1.2.8
-  resolution: "minimist@npm:1.2.8"
-  checksum: 75a6d645fb122dad29c06a7597bddea977258957ed88d7a6df59b5cd3fe4a527e253e9bbf2e783e4b73657f9098b96a5fe96ab8a113655d4109108577ecf85b0
   languageName: node
   linkType: hard
 
@@ -3168,15 +3148,6 @@ __metadata:
   peerDependencies:
     vite: ">=2.8"
   checksum: 89fe789b3e2c4fccf96e547f62493f13345502a6439e164be5a82a05354bc9ff63e6ce64fbd94f81bcaefdc9282bc0cb579dfcdcd3df1df5041109ca0216c332
-  languageName: node
-  linkType: hard
-
-"vite-plugin-wasm-esm@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "vite-plugin-wasm-esm@npm:1.0.0"
-  peerDependencies:
-    vite: 3.x || 4.x
-  checksum: 837d13a2d8988292857e4519460ac7a2b4e30c905f7a5c57c4aed40a70b742a389191edcf0c3658dbf4696123be0857f7160aa07d83d025a450aace4aedaf0f4
   languageName: node
   linkType: hard
 
