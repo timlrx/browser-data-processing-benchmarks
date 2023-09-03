@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build-small": "vite build",
-    "build": "vite build && cp -r workers dist/workers && cp -r benchmarks dist/benchmarks",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
