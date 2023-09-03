@@ -54,7 +54,7 @@ You have `sqlite3` and `duckdb` installed and available on the system's path.
 ## Prior Art
 
 - [wa-sqlite](https://rhashimoto.github.io/wa-sqlite/demo/benchmarks.html) - SQLite variants focused and mostly transactional queries. Thanks for the template and inspiration!
-- [DuckDB versus](https://shell.duckdb.org/versus) - DuckDB-Wasm vs sql.js vs Arquero vs Lovefield on the TPC-H benchmark. More statistically robust, runs on node.js and not directly on the browser.
+- [DuckDB versus](https://shell.duckdb.org/versus) - DuckDB-Wasm vs sql.js vs Arquero vs Lovefield on the TPC-H benchmark (analytical queries). More statistically robust, runs on node.js and not directly on the browser.
 
 [Arquero]: https://github.com/uwdata/arquero
 [SQLite WASM]: https://sqlite.org/wasm/doc/trunk/index.md
