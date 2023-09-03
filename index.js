@@ -21,10 +21,6 @@ const CONFIGURATION = new Map(
       worker: sqliteIndexedWorkerUrl,
     },
     {
-      label: "sqlite (indexed)",
-      worker: sqliteIndexedWorkerUrl,
-    },
-    {
       label: "sqlite (OPFS)",
       worker: sqliteOpfsWorkerUrl,
     },
