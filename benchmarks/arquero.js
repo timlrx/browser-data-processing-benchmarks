@@ -81,14 +81,11 @@ class ArqueroBenchmark extends BaseBenchmark {
   async deleteRows() {
     return "n/a";
   }
-  async cleanup() {
-    return "n/a";
-  }
   async insertRows() {
     return "n/a";
   }
-  async compute() {
-    return 2 + 2;
+  async cleanup() {
+    return "n/a";
   }
 }
 

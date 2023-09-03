@@ -135,12 +135,6 @@ class DuckdbBenchmark extends BaseBenchmark {
   async cleanup() {
     await this.c.close();
   }
-  async result() {
-    return "sqlite";
-  }
-  async compute() {
-    return 3 + 5;
-  }
 }
 
 export default DuckdbBenchmark;

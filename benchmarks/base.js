@@ -40,12 +40,6 @@ class BaseBenchmark {
   async cleanup() {
     throw new Error("Not implemented");
   }
-  async result() {
-    throw new Error("Not implemented");
-  }
-  async compute() {
-    return 1 + 1;
-  }
 }
 
 export default BaseBenchmark;

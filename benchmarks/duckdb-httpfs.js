@@ -57,12 +57,6 @@ class DuckdbHttpFsBenchmark extends DuckdbBenchmark {
   async cleanup() {
     await this.c.close();
   }
-  async result() {
-    return "sqlite";
-  }
-  async compute() {
-    return 3 + 5;
-  }
 }
 
 export default DuckdbHttpFsBenchmark;

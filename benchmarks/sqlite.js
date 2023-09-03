@@ -150,12 +150,6 @@ class SqliteBenchmark extends BaseBenchmark {
   async cleanup() {
     this.db.close();
   }
-  async result() {
-    return "sqlite";
-  }
-  async compute() {
-    return 3 + 5;
-  }
 }
 
 export default SqliteBenchmark;
