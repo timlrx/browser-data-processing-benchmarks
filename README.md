@@ -51,6 +51,11 @@ You have `sqlite3` and `duckdb` installed and available on the system's path.
 6. `node scripts/upload-to-r2.js` to upload the files to Cloudflare R2 storage. Please set `.env` variables for `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY` and `ENDPOINT`.
 7. `yarn build` to build the site and `yarn preview` to preview the prod build.
 
+## Prior Art
+
+- [wa-sqlite](https://rhashimoto.github.io/wa-sqlite/demo/benchmarks.html) - SQLite variants focused and mostly transactional queries. Thanks for the template and inspiration!
+- [DuckDB versus](https://shell.duckdb.org/versus) - DuckDB-Wasm vs sql.js vs Arquero vs Lovefield on the TPC-H benchmark. More statistically robust, runs on node.js and not directly on the browser.
+
 [Arquero]: https://github.com/uwdata/arquero
 [SQLite WASM]: https://sqlite.org/wasm/doc/trunk/index.md
 [DuckDB WASM]: https://github.com/duckdb/duckdb-wasm
