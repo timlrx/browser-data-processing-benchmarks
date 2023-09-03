@@ -28,16 +28,12 @@ class SqliteIndexedBenchmark extends SqliteBenchmark {
     );
     this.db.checkRc(rc);
     // Index all columns / expressions that we would use
-    this.db.exec("CREATE INDEX idx_column00 ON bandcamp (column00);");
-    this.db.exec(
-      "CREATE INDEX idx_amount_paid_usd ON bandcamp (amount_paid_usd);"
-    );
-    this.db.exec(
-      "CREATE INDEX idx_utc_date ON bandcamp(DATE(utc_date, 'unixepoch'));"
-    );
-    this.db.exec(
-      "CREATE INDEX idx_cty_item_slug_type ON bandcamp (country, item_type, slug_type);"
-    );
+    this.db.exec(`
+      CREATE INDEX idx_column00 ON bandcamp (column00);
+      CREATE INDEX idx_amount_paid_usd ON bandcamp (amount_paid_usd);
+      CREATE INDEX idx_utc_date ON bandcamp(DATE(utc_date, 'unixepoch'));
+      CREATE INDEX idx_cty_item_slug_type ON bandcamp (country, item_type, slug_type);
+    `);
   }
   async createIndex() {
     return "n/a";
