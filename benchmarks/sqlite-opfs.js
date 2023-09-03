@@ -28,6 +28,17 @@ class SqliteOPFSBenchmark extends SqliteBenchmark {
 
     log("OPFS is available, created persisted database at", this.db.filename);
   }
+  async cleanup() {
+    this.db.close();
+    // Remove opfs database
+    const opfsRoot = await navigator.storage.getDirectory();
+    const fileHandle = await opfsRoot.getFileHandle("benchmark-opfs.db");
+    try {
+      await fileHandle.remove();
+    } catch (error) {
+      log("Error removing file", error);
+    }
+  }
 }
 
 export default SqliteOPFSBenchmark;
