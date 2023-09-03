@@ -39,7 +39,7 @@ class DuckdbBenchmark extends BaseBenchmark {
   async load() {
     const bundle = await duckdb.selectBundle(MANUAL_BUNDLES);
     const worker = new Worker(bundle.mainWorker);
-    const logger = new duckdb.ConsoleLogger();
+    const logger = new duckdb.ConsoleLogger(duckdb.LogLevel.ERROR);
     this.db = new duckdb.AsyncDuckDB(logger, worker);
     await this.db.instantiate(bundle.mainModule, bundle.pthreadWorker);
     this.c = await this.db.connect();
