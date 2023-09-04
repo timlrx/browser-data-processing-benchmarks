@@ -3,6 +3,7 @@ import arqueroWorkerUrl from "./workers/arquero-worker?worker&url";
 import sqliteWorkerUrl from "./workers/sqlite-worker?worker&url";
 import sqliteIndexedWorkerUrl from "./workers/sqlite-indexed-worker?worker&url";
 import sqliteOpfsWorkerUrl from "./workers/sqlite-opfs-worker?worker&url";
+import sqliteOpfsSAHWorkerUrl from "./workers/sqlite-opfs-sah-worker?worker&url";
 import duckdbWorkerUrl from "./workers/duckdb-worker?worker&url";
 import duckdbHttpfsWorkerUrl from "./workers/duckdb-httpfs-worker?worker&url";
 
@@ -23,6 +24,10 @@ const CONFIGURATION = new Map(
     {
       label: "sqlite (OPFS)",
       worker: sqliteOpfsWorkerUrl,
+    },
+    {
+      label: "sqlite (OPFS + SAH)",
+      worker: sqliteOpfsSAHWorkerUrl,
     },
     {
       label: "duckdb",

@@ -4,7 +4,7 @@ import SqliteBenchmark from "./sqlite";
 const log = (...args) => console.log(...args);
 const error = (...args) => console.error(...args);
 
-class SqliteOPFSBenchmark extends SqliteBenchmark {
+class SqliteOPFSSAHBenchmark extends SqliteBenchmark {
   constructor() {
     super();
   }
@@ -13,23 +13,22 @@ class SqliteOPFSBenchmark extends SqliteBenchmark {
       print: log,
       printErr: error.arrayBuffer,
     });
-    // Overwrites existing content
-    await sqlite3.oo1.OpfsDb.importDb("benchmark-opfs.db", this.arrayBuffer);
-    this.db = new sqlite3.oo1.OpfsDb("benchmark-opfs.db", "c");
-
+    const PoolUtil = await sqlite3.installOpfsSAHPoolVfs({ clearOnInit: true });
+    this.db = new PoolUtil.OpfsSAHPoolDb("/benchmark-opfs-sah.db");
+    PoolUtil.importDb("/benchmark-opfs-sah.db", this.arrayBuffer);
     log("OPFS is available, created persisted database at", this.db.filename);
   }
   async cleanup() {
     this.db.close();
     // Remove opfs database
     const opfsRoot = await navigator.storage.getDirectory();
-    const fileHandle = await opfsRoot.getFileHandle("benchmark-opfs.db");
+    const dirHandle = await opfsRoot.getDirectoryHandle(".opfs-sahpool");
     try {
-      await fileHandle.remove();
+      await dirHandle({ recursive: true });
     } catch (error) {
       log("Error removing file", error);
     }
   }
 }
 
-export default SqliteOPFSBenchmark;
+export default SqliteOPFSSAHBenchmark;
