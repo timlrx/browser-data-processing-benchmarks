@@ -1,4 +1,5 @@
 import * as Comlink from "comlink";
+import danfoWorkerUrl from "./workers/danfo-worker?worker&url";
 import arqueroWorkerUrl from "./workers/arquero-worker?worker&url";
 import sqliteWorkerUrl from "./workers/sqlite-worker?worker&url";
 import sqliteIndexedWorkerUrl from "./workers/sqlite-indexed-worker?worker&url";
@@ -12,6 +13,10 @@ const CONFIGURATION = new Map(
     {
       label: "arquero",
       worker: arqueroWorkerUrl,
+    },
+    {
+      label: "danfo",
+      worker: danfoWorkerUrl,
     },
     {
       label: "sqlite",
