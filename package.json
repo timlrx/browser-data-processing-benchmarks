@@ -22,6 +22,7 @@
     "@sqlite.org/sqlite-wasm": "^3.43.0-build3",
     "arquero": "^5.2.0",
     "comlink": "^4.4.1",
+    "danfojs": "1.1.1",
     "duckdb": "^0.8.1",
     "parquet-wasm": "^0.4.0"
   }

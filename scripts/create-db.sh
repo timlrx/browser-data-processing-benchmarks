@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sqlite3 ./public/data/1000000-bandcamp-sales.db <<EOF
+sqlite3 ./public/data/1000000-bandcamp-sales2.db <<EOF
 create table bandcamp(
     column00 BIGINT,
     _id TEXT,

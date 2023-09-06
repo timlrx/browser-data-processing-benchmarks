@@ -28,6 +28,12 @@ const filesToUpload = [
     localPath: "./public/data/1000000-bandcamp-sales-zstd.parquet",
   },
   {
+    fileName: "1000000-bandcamp-sales.csv.gz",
+    localPath: "./public/data/1000000-bandcamp-sales.csv.gz",
+    ContentEncoding: "gzip",
+    CacheControl: "no-transform",
+  },
+  {
     fileName: "1000000-bandcamp-sales.db.gz",
     localPath: "./public/data/1000000-bandcamp-sales.db.gz",
     ContentEncoding: "gzip",
@@ -58,6 +64,6 @@ async function uploadFileToS3(fileName, localPath, options = {}) {
 
 // Upload each file to S3
 // Options - https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-s3/classes/putobjectcommand.html
-for (const { fileName, localPath, ...optioms } of filesToUpload) {
-  uploadFileToS3(fileName, localPath, option);
+for (const { fileName, localPath, ...options } of filesToUpload) {
+  uploadFileToS3(fileName, localPath, options);
 }
