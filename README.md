@@ -39,21 +39,21 @@ _Note_: Data fetching and loading timings are included in the benchmark but shou
 | Test 8: INSERT 1000 rows with an index | n/a | n/a | 0.041 | 0.078 | 51.042 | 15.851 | 1.397 | n/a |
 | Test 9: DELETE 1000 rows with an index | n/a | n/a | 0.035 | 0.064 | 48.147 | 15.546 | 2.376 | n/a |
 
-### Apple M2 Macbook Air and Chrome 116:
+### Apple M2 Macbook Air and Firefox 117:
 
-| Test                                                                                           | arquero | sqlite | sqlite (indexed) | sqlite (OPFS) | duckdb | duckdb (HttpFS) |
-| ---------------------------------------------------------------------------------------------- | ------- | ------ | ---------------- | ------------- | ------ | --------------- |
-| Fetch data                                                                                     | 1.308   | 1.426  | 1.543            | 1.238         | 1.031  | n/a             |
-| Load data                                                                                      | 1.554   | 1.305  | 2.978            | 0.123         | 3.65   | 0.217           |
-| Test 1: SELECT top level metrics - overall count, mean and total sales                         | 0.042   | 0.321  | 0.081            | 1.016         | 0.008  | 0.554           |
-| Test 2: SELECT group by day and count daily sales and total revenue                            | 0.484   | 0.501  | 0.001            | 1.311         | 0.086  | 0.998           |
-| Test 3: SELECT for each item type, slug type combination the top 5 countries by overall counts | 2.173   | 1.112  | 0.116            | 1.866         | 0.075  | 0.959           |
-| Test 4: SELECT 10 random rows                                                                  | 0.291   | 0.858  | 0.001            | 5.52          | 0.013  | 3.024           |
-| Test 5: CREATE an index                                                                        | n/a     | 0.471  | n/a              | 1.147         | 0.126  | n/a             |
-| Test 6: SELECT 1000 random rows with an index                                                  | n/a     | 0.027  | 0.028            | 0.549         | 0.483  | n/a             |
-| Test 7: UPDATE 2 fields in 1000 rows with an index                                             | n/a     | 0.023  | 0.038            | 6.865         | 0.154  | n/a             |
-| Test 8: INSERT 1000 rows with an index                                                         | n/a     | 0.029  | 0.048            | 7.55          | 0.31   | n/a             |
-| Test 9: DELETE 1000 rows with an index                                                         | n/a     | 0.021  | 0.041            | 7.728         | 0.294  | n/a             |
+| Test | arquero | danfo | sqlite | sqlite (indexed) | sqlite (OPFS) | sqlite (OPFS + SAH) | duckdb | duckdb (HttpFS) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Fetch data | 2.257 | 9.487 | 2.847 | 1.968 | 1.498 | 1.221 | 1.084 | n/a |
+| Load data | 1.707 | n/a | 0.206 | 2.788 | 0.12 | 0.69 | 4.081 | 0.303 |
+| Test 1: SELECT top level metrics - overall count, mean and total sales | 0.051 | 0.082 | 0.259 | 0.074 | 1.846 | 1.091 | 0.007 | 0.554 |
+| Test 2: SELECT group by day and count daily sales and total revenue | 0.634 | 2.73 | 0.476 | 0.001 | 2.185 | 1.35 | 0.169 | 1.123 |
+| Test 3: SELECT for each item type, slug type combination the top 5 countries by overall counts | 0.852 | 3.53 | 1.025 | 0.119 | 2.725 | 1.909 | 0.132 | 0.903 |
+| Test 4: SELECT 10 random rows | 0.374 | 1.364 | 0.76 | 0.001 | 10.292 | 5.691 | 0.02 | 4.356 |
+| Test 5: CREATE an index | n/a | n/a | 0.415 | n/a | 2.101 | 1.344 | 0.207 | n/a |
+| Test 6: SELECT 1000 random rows with an index | n/a | n/a | 0.02 | 0.025 | 0.923 | 0.089 | 0.748 | n/a |
+| Test 7: UPDATE 2 fields in 1000 rows with an index | n/a | n/a | 0.021 | 0.034 | 10.986 | 0.673 | 0.291 | n/a |
+| Test 8: INSERT 1000 rows with an index | n/a | n/a | 0.025 | 0.043 | 14.697 | 0.735 | 0.55 | n/a |
+| Test 9: DELETE 1000 rows with an index | n/a | n/a | 0.019 | 0.036 | 13.757 | 0.717 | 0.576 | n/a |
 
 ## Development
 
