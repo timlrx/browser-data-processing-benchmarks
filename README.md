@@ -25,19 +25,19 @@ _Note_: Data fetching and loading timings are included in the benchmark but shou
 
 ### 11th Gen Intel(R) Core(TM) i7-1165G7 @2.80GHz Windows Laptop and Chrome 116:
 
-| Test                                                                                           | arquero | sqlite | sqlite (indexed) | sqlite (OPFS) | duckdb | duckdb (HttpFS) |
-| ---------------------------------------------------------------------------------------------- | ------- | ------ | ---------------- | ------------- | ------ | --------------- |
-| Fetch data                                                                                     | 1.843   | 2.571  | 2.161            | 2.118         | 0.137  | n/a             |
-| Load data                                                                                      | 2.267   | 1.309  | 3.628            | 2.435         | 3.783  | 0.205           |
-| Test 1: SELECT top level metrics - overall count, mean and total sales                         | 0.058   | 0.333  | 0.107            | 2.152         | 0.015  | 0.607           |
-| Test 2: SELECT group by day and count daily sales and total revenue                            | 0.866   | 0.597  | 0.002            | 2.335         | 0.124  | 1.039           |
-| Test 3: SELECT for each item type, slug type combination the top 5 countries by overall counts | 3.857   | 1.278  | 0.139            | 2.982         | 0.097  | 0.951           |
-| Test 4: SELECT 10 random rows                                                                  | 0.435   | 0.861  | 0.001            | 10.759        | 0.028  | 3.95            |
-| Test 5: CREATE an index                                                                        | n/a     | 0.522  | n/a              | 2.269         | 0.22   | n/a             |
-| Test 6: SELECT 1000 random rows with an index                                                  | n/a     | 0.043  | 0.049            | 2.156         | 0.942  | n/a             |
-| Test 7: UPDATE 2 fields in 1000 rows with an index                                             | n/a     | 0.037  | 0.052            | 23.006        | 0.401  | n/a             |
-| Test 8: INSERT 1000 rows with an index                                                         | n/a     | 0.041  | 0.064            | 29.481        | 0.672  | n/a             |
-| Test 9: DELETE 1000 rows with an index                                                         | n/a     | 0.029  | 0.049            | 27.723        | 0.693  | n/a             |
+| Test | arquero | danfo | sqlite | sqlite (indexed) | sqlite (OPFS) | sqlite (OPFS + SAH) | duckdb | duckdb (HttpFS) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Fetch data | 3.009 | 16.86 | 2.661 | 2.483 | 2.438 | 4.951 | 1.508 | n/a |
+| Load data | 2.866 | n/a | 0.893 | 3.907 | 0.832 | 2.089 | 4.309 | 0.463 |
+| Test 1: SELECT top level metrics - overall count, mean and total sales | 0.067 | 0.193 | 0.376 | 0.103 | 2.402 | 0.72 | 0.014 | 0.859 |
+| Test 2: SELECT group by day and count daily sales and total revenue | 1.05 | 4.068 | 0.638 | 0.005 | 2.603 | 1.181 | 0.163 | 1.648 |
+| Test 3: SELECT for each item type, slug type combination the top 5 countries by overall counts | 4.847 | 3.413 | 1.432 | 0.165 | 3.311 | 1.938 | 0.114 | 1.477 |
+| Test 4: SELECT 10 random rows | 0.517 | 1.665 | 0.991 | 0.002 | 12.033 | 2.412 | 0.032 | 7.325 |
+| Test 5: CREATE an index | n/a | n/a | 0.573 | n/a | 2.51 | 0.86 | 0.24 | n/a |
+| Test 6: SELECT 1000 random rows with an index | n/a | n/a | 0.054 | 0.065 | 3.795 | 0.1 | 1.048 | n/a |
+| Test 7: UPDATE 2 fields in 1000 rows with an index | n/a | n/a | 0.038 | 0.062 | 42.316 | 16.411 | 0.588 | n/a |
+| Test 8: INSERT 1000 rows with an index | n/a | n/a | 0.041 | 0.078 | 51.042 | 15.851 | 1.397 | n/a |
+| Test 9: DELETE 1000 rows with an index | n/a | n/a | 0.035 | 0.064 | 48.147 | 15.546 | 2.376 | n/a |
 
 ### Apple M2 Macbook Air and Chrome 116:
 
